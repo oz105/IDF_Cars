@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>מעקב רכבים</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f5;
+            padding: 20px;
+            direction: rtl;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        form {
+            max-width: 600px;
+            background: white;
+            margin: 0 auto 40px auto;
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+            align-items: center;
+        }
+        form label {
+            justify-self: end;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        form input {
+            padding: 8px 10px;
+            font-size: 1rem;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        form button {
+            grid-column: span 2;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 95%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9fb;
+        }
+        @media (max-width: 720px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+            form button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>מערכת מעקב רכבים</h1>
+
+    <form method="post" action="/add">
+        <label for="license_plate">מספר רישוי:</label>
+        <input type="text" id="license_plate" name="license_plate" required>
+
+        <label for="car_model">דגם:</label>
+        <input type="text" id="car_model" name="car_model" required>
+
+        <label for="ownership">בעלות:</label>
+        <input type="text" id="ownership" name="ownership" placeholder="לדוגמה: שׁכור">
+
+        <label for="status">סטטוס:</label>
+        <input type="text" id="status" name="status" placeholder="לדוגמה: כשיר">
+
+        <label for="year">שנת יצור:</label>
+        <input type="number" id="year" name="year" min="1900" max="2100">
+
+        <label for="last_service_km">ק״מ טיפול אחרון:</label>
+        <input type="number" id="last_service_km" name="last_service_km" min="0">
+
+        <label for="next_service_km">ק״מ טיפול הבא:</label>
+        <input type="number" id="next_service_km" name="next_service_km" min="0">
+
+        <label for="test_due_date">תוקף טסט:</label>
+        <input type="date" id="test_due_date" name="test_due_date">
+
+        <label for="next_maintenance_date">תאריך טיפול הבא:</label>
+        <input type="date" id="next_maintenance_date" name="next_maintenance_date">
+
+        <label for="oil_change_date">תאריך טיפול שמנים:</label>
+        <input type="date" id="oil_change_date" name="oil_change_date">
+
+        <label for="km">ק״מ נוכחי:</label>
+        <input type="number" id="km" name="km" min="0" required>
+
+        <button type="submit">הוסף רכב</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>מספר רישוי</th>
+                <th>דגם</th>
+                <th>בעלות</th>
+                <th>סטטוס</th>
+                <th>שנת יצור</th>
+                <th>ק"מ טיפול אחרון</th>
+                <th>ק"מ טיפול הבא</th>
+                <th>תוקף טסט</th>
+                <th>תאריך טיפול הבא</th>
+                <th>תאריך טיפול שמנים</th>
+                <th>ק"מ נוכחי</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{ car.license_plate }}</td>
+                <td>{{ car.car_model }}</td>
+                <td>{{ car.ownership or '-' }}</td>
+                <td>{{ car.status or '-' }}</td>
+                <td>{{ car.year or '-' }}</td>
+                <td>{{ car.last_service_km or '-' }}</td>
+                <td>{{ car.next_service_km or '-' }}</td>
+                <td>{{ car.test_due_date or '-' }}</td>
+                <td>{{ car.next_maintenance_date or '-' }}</td>
+                <td>{{ car.oil_change_date or '-' }}</td>
+                <td>{{ car.km }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

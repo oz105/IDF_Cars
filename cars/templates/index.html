@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>ניהול רכבים</title>
+</head>
+<body>
+    <h1>🚗 הוספת רכב חדש</h1>
+    <form action="/add_car" method="post">
+        מספר רישוי: <input name="license_plate"><br>
+        דגם רכב: <input name="car_model"><br>
+        בעלות: <input name="ownership"><br>
+        סטטוס: <input name="status"><br>
+        תאריך טסט: <input type="date" name="test_due_date"><br>
+        טיפול הבא: <input type="date" name="next_maintenance_date"><br>
+        טיפול שמנים: <input type="date" name="oil_change_date"><br>
+        ק"מ נוכחי: <input name="km" type="number"><br>
+        <button type="submit">הוסף</button>
+    </form>
+
+    <h2>📋 כל הרכבים</h2>
+    <ul>
+        {% for car in cars %}
+            <li>{{ car.license_plate }} - {{ car.car_model }} - {{ car.km }} ק"מ</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

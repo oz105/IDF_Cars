@@ -1,0 +1,12 @@
+[
+    {
+        "license_plate": "52654003",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-01-01",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-09-21",
+        "km": 95000
+    }
+]

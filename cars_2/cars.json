@@ -1,0 +1,62 @@
+[
+    {
+        "license_plate": "52654003",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-02-02",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-09-21",
+        "km": 76854
+    },
+    {
+        "license_plate": "52656903",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-04-01",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-11-15",
+        "km": 128433
+    },
+    {
+        "license_plate": "52654903",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-02-01",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-09-13",
+        "km": 74802
+    },
+    {
+        "license_plate": "52657503",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-03-01",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-09-03",
+        "km": 116556
+    },
+    {
+        "license_plate": "52657603",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-05-01",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-11-15",
+        "km": 109427
+    },
+    {
+        "license_plate": "52657403",
+        "car_model": "פיג'ו",
+        "ownership": "שכור",
+        "status": "כשיר",
+        "test_due_date": "2026-06-01",
+        "next_maintenance_date": "2025-08-28",
+        "oil_change_date": "2024-10-18",
+        "km": 108823
+    }
+]
