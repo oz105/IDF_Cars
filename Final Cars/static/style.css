@@ -1,0 +1,295 @@
+body {
+    font-family: Arial;
+    direction: rtl;
+    padding: 20px;
+    background: #f8f8f8;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* כפתור התנתקות */
+.logout-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e74c3c; /* אדום */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; /* אדום כהה */
+}
+
+/* מיכל ראשי: טופס + רשימות */
+.main-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+}
+
+/* טופס הוספה */
+form.compact-form {
+    max-width: 450px;
+    font-size: 0.75rem;
+    padding: 10px 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px 0;
+}
+
+form.compact-form label {
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+form.compact-form input[type="text"],
+form.compact-form input[type="number"],
+form.compact-form input[type="date"] {
+    font-size: 0.75rem;
+    height: 24px;
+    padding: 4px 6px;
+    margin-bottom: 6px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+form.compact-form button[type="submit"] {
+    font-size: 0.85rem;
+    padding: 6px 0;
+    width: auto;
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+form.compact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* רשימות תזכורות - צד שמאל */
+.reminder-lists section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    padding: 15px 20px;
+}
+
+.reminder-lists h2 {
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.reminder-lists ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reminder-lists ul li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    direction: rtl;
+}
+
+.reminder-lists ul li:last-child {
+    border-bottom: none;
+}
+
+.reminder-lists ul li strong {
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+/* כפתורי שליחה ברשימות */
+.reminder-lists a.btn {
+    white-space: nowrap;
+}
+
+/* טבלה מרכזית */
+table {
+    width: 95%;
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9fb;
+}
+
+/* קישורים לעדכונים בתחתית */
+.update-links {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.update-links a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.update-links a:hover {
+    background-color: #0056b3;
+}
+
+/* כפתור קטן כללי */
+.btn-small {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+/* רספונסיביות */
+@media (max-width: 900px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    form.compact-form {
+        max-width: 100%;
+    }
+
+    .reminder-lists section {
+        margin-bottom: 20px;
+    }
+}
+
+/* מכולה ראשית עם שני צדדים - ימין טופס, שמאל רשימות */
+.main-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+}
+
+/* טופס בצד ימין */
+form.compact-form {
+    flex: 0 0 350px; /* רוחב קבוע */
+    font-size: 0.75rem;
+    padding: 10px 12px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px 0;
+}
+
+/* רשימות בצד שמאל */
+.reminder-lists {
+    flex: 1; /* תופס את שאר הרוחב */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reminder-lists section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 15px 20px;
+}
+
+.reminder-lists h2 {
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.reminder-lists ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reminder-lists ul li {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    direction: rtl;
+}
+
+.reminder-lists ul li:last-child {
+    border-bottom: none;
+}
+
+.reminder-lists ul li strong {
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+/* כפתורי שליחה ברשימות */
+.reminder-lists a.btn {
+    white-space: nowrap;
+}
+
+/* רספונסיביות למובייל */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    form.compact-form {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+}
